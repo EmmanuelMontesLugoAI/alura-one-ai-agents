@@ -1,0 +1,193 @@
+{
+  "name": "Clase-01-02-Alura",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e12c949b-8d9d-4858-a28a-2aa1589bf440",
+      "name": "When chat message received",
+      "webhookId": "47a15780-7ae0-4f52-9dfd-ce6c378c487b"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "fbd1680a-845e-4fee-a37c-a18e80f30316",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatCohere",
+      "typeVersion": 1,
+      "position": [
+        80,
+        208
+      ],
+      "id": "acf7a763-9349-46b2-8e2a-9d0a7f070a8a",
+      "name": "Cohere Chat Model",
+      "credentials": {
+        "cohereApi": {
+          "id": "6aRCRpxImR28BEiU",
+          "name": "Cohere account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        224,
+        208
+      ],
+      "id": "67c97b48-20a2-440c-84d6-695c7d0570c0",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Buscar información sobre políticas de RH, vacaciones, horarios de la empresa Chocolatech.",
+        "memoryKey": {
+          "__rl": true,
+          "mode": "list",
+          "value": "vector_store_key"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        384,
+        208
+      ],
+      "id": "9cb5f845-3cb8-4b5b-98c9-2cd2f34d2fe7",
+      "name": "Simple Vector Store"
+    },
+    {
+      "parameters": {
+        "modelName": "embed-multilingual-v3.0"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsCohere",
+      "typeVersion": 1,
+      "position": [
+        480,
+        400
+      ],
+      "id": "f4fb2b58-1c8f-4f0b-a323-4c9482a4530f",
+      "name": "Embeddings Cohere",
+      "credentials": {
+        "cohereApi": {
+          "id": "6aRCRpxImR28BEiU",
+          "name": "Cohere account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Flujo secundario - Agente de Chat Inteligente con RAG (Cohere)\n**Flujo conversacional automatizado.** Utiliza el modelo de lenguaje de Cohere para razonar, Simple Memory para retener el contexto del chat, y una herramienta de búsqueda vectorial (Simple Vector Store con Cohere Embeddings) para consultar y responder basándose en una base de conocimientos externa.",
+        "height": 672,
+        "width": 976,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -224,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "9c48c46d-e45c-475f-859f-24eae6b75985",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cohere Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Cohere": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "f6116ccb-baad-482f-9455-32947714a4a8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f825b5ec656bb9153348e6e6c8e0f274418f8c01c851d7efce17bc7553243aaa"
+  },
+  "id": "FtMrq9iYI4LTdzgL",
+  "tags": [
+    {
+      "name": "Alura-OracleONE",
+      "id": "HNR57CycV3A1TK2U",
+      "updatedAt": "2026-05-19T03:01:09.626Z",
+      "createdAt": "2026-05-19T03:01:09.626Z"
+    }
+  ]
+}
