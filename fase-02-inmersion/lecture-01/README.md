@@ -15,7 +15,7 @@ This lecture serves as an accelerated architectural baseline, transitioning from
 Instead of relying on monolithic architectures, this implementation splits the AI’s cognitive overhead into a specialized, two-tier system orchestrated via **n8n**.
 
 #### A. Primary Workflow: Ingestion & ETL Pipeline
-* **Visual Topology:** See `img/primary-etl-pipeline.png`
+* **Visual Topology:** See [Primary Workflow](img/primary-etl-pipeline.png)
 * **Mechanics:** * **Trigger:** Instantiated via manual or web-hooked execution.
   * **Ingestion:** Fetches unstructured text documents dynamically from remote data layers via an HTTP GET request layer.
   * **Transformation (Chunking):** The `Default Data Loader` parses incoming data stream payloads and enforces text-splitting token limits.
@@ -23,7 +23,7 @@ Instead of relying on monolithic architectures, this implementation splits the A
   * **Storage (Load):** Chunks are cached natively inside a localized `Simple Vector Store`.
 
 #### B. Secondary Workflow: Conversational AI Agent with Dynamic Grounding
-* **Visual Topology:** See `img/secondary-chat-agent.png`
+* **Visual Topology:** See [Secondary Workflow](img/secondary-chat-agent.png)
 * **Mechanics:**
   * **Trigger:** Instantiated asynchronously upon user message reception via the chat client interface.
   * **Reasoning Engine:** Powered by the `Cohere Chat Model` for deep intent mapping.
