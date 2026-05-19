@@ -1,7 +1,6 @@
-# alura-one-ai-agents
-Official portfolio for the Oracle ONE AI &amp; Cloud program. Documentation of my journey into advanced AI Agents, RAG pipelines, n8n automation, and Oracle Cloud Infrastructure architecture. Focused on scalable, high-performance solutions.
-
 # Alura ONE - AI Agents & Cloud Automation Portfolio
+
+Official portfolio for the Oracle ONE AI &amp; Cloud program. Documentation of my journey into advanced AI Agents, RAG pipelines, n8n automation, and Oracle Cloud Infrastructure architecture. Focused on scalable, high-performance solutions.
 
 Welcome to my central "Proof of Work" repository, documenting my progress throughout the **Oracle ONE Program** in partnership with **Alura**. 
 
