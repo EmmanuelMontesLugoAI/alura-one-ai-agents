@@ -2,7 +2,7 @@
 
 This lecture serves as an accelerated architectural baseline, transitioning from basic API consumption into building decoupled, stateful, and production-ready Retrieval-Augmented Generation (RAG) systems.
 
-## 📈 Weekly Objectives
+## 📈 Objectives
 * **Pipeline Decoupling:** Separate data ingestion routines (ETL) from real-time runtime inferences.
 * **State & Memory Management:** Establish persistent relational schemas to move past volatile, short-term conversational memory.
 * **Production Deployment:** Bridge internal backend automation with end-user channels via webhooks and external APIs.
@@ -35,8 +35,8 @@ Instead of relying on monolithic architectures, this implementation splits the A
 ## 🗂️ Verification & Core Deliverables
 
 ### 1. Source Workflows (n8n JSON schemas)
-* [📥 01-primary-etl-pipeline.json](./src/01-primary-etl-pipeline.json) — Production canvas orchestration for data fetching, document parsing, semantic chunking, and localized embedding indexation.
-* [🤖 02-secondary-chat-agent.json](./src/02-secondary-chat-agent.json) — Runtime execution engine containing LLM parameters, memory structures, and automated similarity-search routing tools.
+* [📥 01-primary-etl-pipeline.json](../src/01-primary-etl-pipeline.json) — Production canvas orchestration for data fetching, document parsing, semantic chunking, and localized embedding indexation.
+* [🤖 02-secondary-chat-agent.json](../src/02-secondary-chat-agent.json) — Runtime execution engine containing LLM parameters, memory structures, and automated similarity-search routing tools.
 
 ---
 *Maintained by Emmanuel Montes Lugo — Specialist in Scalable Solutions.*
