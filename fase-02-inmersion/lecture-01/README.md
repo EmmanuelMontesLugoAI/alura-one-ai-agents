@@ -1,6 +1,6 @@
-# Phase 2: Immersion (Week 1)
+# Lecture 01
 
-This week serves as an accelerated architectural baseline, transitioning from basic API consumption into building decoupled, stateful, and production-ready Retrieval-Augmented Generation (RAG) systems.
+This lecture serves as an accelerated architectural baseline, transitioning from basic API consumption into building decoupled, stateful, and production-ready Retrieval-Augmented Generation (RAG) systems.
 
 ## 📈 Weekly Objectives
 * **Pipeline Decoupling:** Separate data ingestion routines (ETL) from real-time runtime inferences.
